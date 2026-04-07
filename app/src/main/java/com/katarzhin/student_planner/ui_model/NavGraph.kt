@@ -12,6 +12,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.katarzhin.student_planner.navigation.Screen
 import com.katarzhin.student_planner.ui_model.*
+import com.katarzhin.student_planner.data.sampleSchedule
+import com.katarzhin.student_planner.ui_model.ScheduleScreen
+import com.katarzhin.student_planner.ui_model.ScheduleDetailsScreen
 
 @Composable
 fun StudentPlannerNavHost(
@@ -33,6 +36,9 @@ fun StudentPlannerNavHost(
                 },
                 onSettingsClick = {
                     navController.navigate(Screen.Setting.route)
+                },
+                onScheduleClick = {
+                    navController.navigate(Screen.Schedule.route)
                 }
             )
         }
@@ -64,6 +70,26 @@ fun StudentPlannerNavHost(
                 onNavigateBack = {
                     navController.popBackStack()
                 }
+            )
+        }
+        composable(route = Screen.Schedule.route) {
+            ScheduleScreen(
+                onNavigateBack = { navController.popBackStack() },
+                onLessonClick = { lessonId ->
+                    navController.navigate(Screen.ScheduleDetails.createRoute(lessonId))
+                }
+            )
+        }
+        composable(
+            route = Screen.ScheduleDetails.route,
+            arguments = listOf(
+                navArgument("lessonId") { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+            val lessonId = backStackEntry.arguments?.getString("lessonId") ?: ""
+            ScheduleDetailsScreen(
+                lessonId = lessonId,
+                onNavigateBack = { navController.popBackStack() }
             )
         }
     }

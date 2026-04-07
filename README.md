@@ -8,6 +8,8 @@
 2. **DetailsScreen** — экран детальной информации о выбранной дисциплине (название, преподаватель, баллы, оценка, описание)
 3. **ProfileScreen** — экран профиля студента с личной информацией и академической статистикой
 4. **SettingsScreen** — экран настроек приложения с переключателями уведомлений и темы
+5. **ScheduleScreen** — экран расписания занятий на неделю
+6. **ScheduleDetailsScreen** — экран детальной информации о выбранном занятии
 
 ## Используемые технологии
 
@@ -22,11 +24,14 @@
 HomeScreen (startDestination)
     ├──> [клик по дисциплине] -> DetailsScreen (с параметром subjectId)
     ├──> [кнопка Профиль] -> ProfileScreen
-    └──> [кнопка Настройки] -> SettingsScreen
+    ├──> [кнопка Настройки] -> SettingsScreen
+    └──> [кнопка Расписание] -> ScheduleScreen
+            └──> [клик по занятию] -> ScheduleDetailsScreen
 
 DetailsScreen -> [кнопка Назад] -> HomeScreen
 ProfileScreen -> [кнопка Назад] -> HomeScreen
 SettingsScreen -> [кнопка Назад] -> HomeScreen
+ScheduleScreen -> [кнопка Назад] -> HomeScreen
 ```
 
 ## Скриншоты
@@ -42,6 +47,9 @@ SettingsScreen -> [кнопка Назад] -> HomeScreen
 
 ### Экран настроек
 ![Settings Screen](app/img/step7_navigation_working_Katarzhin_4.png)
+
+### Экран расписания
+![Schedule Screen](app/img/stepxz_added_shedule_Katarzhin.png)
 
 ---
 
