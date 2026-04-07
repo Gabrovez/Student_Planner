@@ -63,12 +63,12 @@ fun ProfileScreen(
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
-                        text = "Иванов Иван Иванович",
+                        text = "Катаржин Григорий Михайлович",
                         style = MaterialTheme.typography.headlineSmall,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Группа: ИСП-234",
+                        text = "Группа: ИСП-232",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
